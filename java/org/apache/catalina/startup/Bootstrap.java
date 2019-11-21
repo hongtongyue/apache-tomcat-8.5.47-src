@@ -24,6 +24,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -455,6 +456,9 @@ public final class Bootstrap {
      * @param args Command line arguments to be processed
      */
     public static void main(String args[]) {
+
+        // 设置美国时区。否则在idea中答应的日志乱码
+        Locale.setDefault(Locale.US);
 
         if (daemon == null) {
             // Don't set daemon until init() has completed
